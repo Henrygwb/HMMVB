@@ -1,11 +1,13 @@
+library('pryr')
+library('MASS')
 setGeneric('Plot',
-           function(object, BIC = NULL, hyper = NULL, data = NULL, cluster_result = NULL, No.cluster = NULL, option = NULL){
+           function(object, BIC = NULL, hyper = NULL, data = NULL, cluster_result = NULL, cluster_id = NULL, option = NULL){
              standardGeneric('Plot')
            }
 )
 
 setMethod('Plot', 'HMMVB',
-          function(object, BIC = NULL, hyper = NULL, data = NULL, cluster_result = NULL, No.cluster = NULL, option = NULL){
+          function(object, BIC = NULL, hyper = NULL, data = NULL, cluster_result = NULL, cluster_id = NULL, option = NULL){
             if (option == "BIC"){
               r = nrow(BIC$all_hyper)
               c = ncol(BIC$all_hyper)
@@ -30,10 +32,10 @@ setMethod('Plot', 'HMMVB',
             }
             if (option == 'one_cluster'){
               dim = object@dim_order
-              idx = which(cluster_result == No.cluster)
+              idx = which(cluster_result == cluster_id)
               data = data.frame(data[idx,])
               colnames(data) = c(as.character(dim))
-              parcoord(data, var.label=TRUE, labels = as.character(No.cluster))
+              parcoord(data, var.label=TRUE)
             }
             if (option == 'mean_cluster'){
               dim = object@dim_order

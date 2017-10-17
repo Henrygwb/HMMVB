@@ -1,3 +1,5 @@
+library('pryr')
+library('MASS')
 setGeneric('GetBIC',
            function(object){
              standardGeneric('GetBIC')

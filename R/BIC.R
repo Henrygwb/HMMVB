@@ -1,3 +1,5 @@
+library('pryr')
+library('MASS')
 setGeneric('BIC',
            function(object, data, ncom){
              standardGeneric('HMMVB_BIC')

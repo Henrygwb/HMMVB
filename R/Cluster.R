@@ -1,3 +1,5 @@
+library('pryr')
+library('MASS')
 setGeneric('Cluster',
            function(object, test_data, model_name = 'model_binary', result_name = 'refcls', input_ref_file = NULL, output_info_file = NULL, min_cluster_size = 1, L1_flag = FALSE, diagonal_flag = FALSE){
              standardGeneric('Cluster')

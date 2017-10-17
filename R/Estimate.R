@@ -1,3 +1,5 @@
+library('pryr')
+library('MASS')
 setGeneric("Estimate",
            function(object, initial_scheme_flag = FALSE, kmeans_initial = TRUE, initial_scheme1 = 0, initial_scheme2 = 0, random_seed = 0, data,  model_name = 'model_binary', block_size_search = FALSE, max_block_size = 10, order_file = NULL, num_permu = 0, complex_file = NULL, relaxed_search = FALSE, diagonal_flag = TRUE, output_full_model = TRUE){
              standardGeneric("Estimate")

@@ -1,4 +1,5 @@
-
+library('pryr')
+library('MASS')
 setGeneric('write_hyper_file',
            function(object){
              standardGeneric('write_hyper_file')

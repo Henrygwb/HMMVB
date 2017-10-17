@@ -1,3 +1,5 @@
+library('pryr')
+library('MASS')
 setGeneric('Get_hyperparameters',
            function(object){
              standardGeneric('Get_hyperparameters')
