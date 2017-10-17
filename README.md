@@ -1,5 +1,5 @@
 # HMMVB
-1. Depends: r(>=3.4.2), pypr, MASS, devtools  
+1. Depends: pypr, MASS 
 2. Before install the package:  
    - Download **Hmmvb_package.tar.gz** and unzip it to somewhere on your computer;  
    - Open terminal and go into the folder: Hmmvb_package_v1.3.2 by the following commend:  

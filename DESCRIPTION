@@ -1,9 +1,10 @@
 Package: HMMVB
 Type: Package
-Title: What the Package Does (Title Case)
+Title: Hidden Markov Models on Variable Blocks
 Version: 0.1.0
-Author: Who wrote it
-Maintainer: Who to complain to <yourfault@somewhere.net>
-Description: More about what it does (maybe more than one line)
-License: What license is it under?
+Author: Wenbo Guo
+Maintainer: Wenbo Guo <wzg13@psu.edu>
+Description: Estimate HMMVB and use the model to clustering given data
+License: The Pennsylvania State University
 LazyData: TRUE
+Depends: pryr, MASS
