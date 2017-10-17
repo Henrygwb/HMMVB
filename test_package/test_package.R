@@ -1,5 +1,8 @@
+### Installing the package
 library('devtools')
 install_github('Henrygwb/HMMVB')
+
+### Import the package and depend packages
 library('HMMVB')
 library('MASS')
 library('pryr')
