@@ -1,12 +1,12 @@
 library('pryr')
 library('MASS')
-setGeneric('GetBIC',
+setGeneric('getbic',
            function(object){
-             standardGeneric('GetBIC')
+             standardGeneric('getbic')
            }
 )
 
-setMethod('GetBIC', 'HMMVB',
+setMethod('getbic', 'HMMVB',
           function(object){
             if (length(object@nseq)==0){
               BIC <- readLines('model.out')[3]

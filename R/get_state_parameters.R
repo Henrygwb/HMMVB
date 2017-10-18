@@ -1,12 +1,12 @@
 library('pryr')
 library('MASS')
-setGeneric('Get_State_parameters',
+setGeneric('get_state_parameters',
            function(object, block_id, state_id){
-             standardGeneric('Get_State_parameters')
+             standardGeneric('get_state_parameters')
            }
 )
 
-setMethod('Get_State_parameters', 'HMMVB',
+setMethod('get_state_parameters', 'HMMVB',
           function(object, block_id, state_id){
             pp = sprintf ('Get parameters of block %d state %d', block_id, state_id)
             print (pp)

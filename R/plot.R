@@ -1,12 +1,12 @@
 library('pryr')
 library('MASS')
-setGeneric('Plot',
+setGeneric('plot',
            function(object, BIC = NULL, hyper = NULL, data = NULL, cluster_result = NULL, cluster_id = NULL, option = NULL){
-             standardGeneric('Plot')
+             standardGeneric('plot')
            }
 )
 
-setMethod('Plot', 'HMMVB',
+setMethod('plot', 'HMMVB',
           function(object, BIC = NULL, hyper = NULL, data = NULL, cluster_result = NULL, cluster_id = NULL, option = NULL){
             if (option == "BIC"){
               r = nrow(BIC$all_hyper)

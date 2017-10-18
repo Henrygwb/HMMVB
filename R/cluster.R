@@ -1,12 +1,12 @@
 library('pryr')
 library('MASS')
-setGeneric('Cluster',
+setGeneric('cluster',
            function(object, test_data, model_name = 'model_binary', result_name = 'refcls', input_ref_file = NULL, output_info_file = NULL, min_cluster_size = 1, L1_flag = FALSE, diagonal_flag = FALSE){
-             standardGeneric('Cluster')
+             standardGeneric('cluster')
            }
 )
 
-setMethod('Cluster', 'HMMVB',
+setMethod('cluster', 'HMMVB',
           function(object, test_data, model_name = 'model_binary', result_name = 'refcls', input_ref_file = NULL, output_info_file = NULL, min_cluster_size = 1, L1_flag = FALSE, diagonal_flag = FALSE){
             model_binary_file = paste(model_name, 'dat', sep = '.')
             output_result_file = paste(result_name, 'dat', sep = '.')

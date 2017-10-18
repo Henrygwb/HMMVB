@@ -1,12 +1,12 @@
 library('pryr')
 library('MASS')
-setGeneric('BIC',
+setGeneric('bic',
            function(object, data, ncom){
-             standardGeneric('HMMVB_BIC')
+             standardGeneric('bic')
            }
 )
 
-setMethod('BIC', 'HMMVB',
+setMethod('bic', 'HMMVB',
           function(object, data, ncom){
             stopifnot(ncol(ncom) == object@nseq)
             write.table(data, "train_data_bic.txt", sep = " ", row.names = FALSE, col.names = FALSE)

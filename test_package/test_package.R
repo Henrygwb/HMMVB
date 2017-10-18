@@ -18,25 +18,25 @@ HMM_1 = new("HMMVB", ndim = 8, nseq = 2, ndim_seq = c(5, 3), ncom_seq = c(20, 20
 # c_path is the absolute path of the folder:  Hmmvb_package_v1.3.2
 
 ### Plot the data set
-Plot(HMM_1, data = simu1$data, cluster_result = test_result, option='data')
+plot(HMM_1, data = simu1$data, cluster_result = test_result, option='data')
 
 # Estimating the density of given data set
-Estimate(HMM_1, data = simu1$data, model_name = 'model_binary')
+estimate(HMM_1, data = simu1$data, model_name = 'model_binary')
 
 #Output model and hyperparameter information
-Get_hyperparameters(HMM_1)
-Print_model_information(HMM_1)
-Print_block_information(HMM_1, block_id=1)
-Gaussian_para = Get_State_parameters(HMM_1, block_id = 2, state_id = 1)
+get_hyperparameters(HMM_1)
+print_model_information(HMM_1)
+print_block_information(HMM_1, block_id=1)
+Gaussian_para = get_state_parameters(HMM_1, block_id = 2, state_id = 1)
 
 ### Clustering the given data set with trained model
-test_result = HMMVB_cluster(HMM_1, data  = simu1$data, model_name = 'model_binary', result_name = 'refcls')
-BIC <- GetBIC(HMM_1)
+test_result = cluster(HMM_1, data  = simu1$data, model_name = 'model_binary', result_name = 'refcls')
+BIC <- getbic(HMM_1)
 print (BIC)
 
 ### Ploting data and results
-Plot(HMM_1, data = simu1$data, cluster_result = test_result, option = 'cluster')
+plot(HMM_1, data = simu1$data, cluster_result = test_result, option = 'cluster')
 ### Ploting data of one specific cluster
-Plot(HMM_1, data = simu1$data, cluster_result = test_result, option = 'one_cluster', cluster_id = 1)
+plot(HMM_1, data = simu1$data, cluster_result = test_result, option = 'one_cluster', cluster_id = 1)
 ### Ploting means of data in each cluster
-Plot(HMM_1, data = simu1$data, cluster_result = test_result, option = 'mean_cluster')
+plot(HMM_1, data = simu1$data, cluster_result = test_result, option = 'mean_cluster')
