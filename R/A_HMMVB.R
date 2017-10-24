@@ -1,5 +1,7 @@
 library('pryr')
 library('MASS')
+set.seed(1234)
+
 setClass("HMMVB", slots = list(ndim = 'numeric', nseq = 'numeric', ndim_seq = 'vector',
                                ncom_seq = 'vector', dim_order = 'vector', c_path = 'character'))
 #

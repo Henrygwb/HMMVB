@@ -21,7 +21,7 @@ HMM_1 = new("HMMVB", ndim = 8, nseq = 2, ndim_seq = c(5, 3), ncom_seq = c(20, 20
 plot(HMM_1, data = simu1$data, cluster_result = test_result, option='data')
 
 # Estimating the density of given data set
-estimate(HMM_1, data = simu1$data, model_name = 'model_binary')
+estimate(HMM_1, data = simu1$data, model_name = 'model_binary', diagonal_flag = TRUE)
 
 #Output model and hyperparameter information
 get_hyperparameters(HMM_1)
@@ -30,7 +30,7 @@ print_block_information(HMM_1, block_id=1)
 Gaussian_para = get_state_parameters(HMM_1, block_id = 2, state_id = 1)
 
 ### Clustering the given data set with trained model
-test_result = cluster(HMM_1, data  = simu1$data, model_name = 'model_binary', result_name = 'refcls')
+test_result = cluster(HMM_1, data  = simu1$data, model_name = 'model_binary', result_name = 'refcls', diagonal_flag = TRUE)
 BIC <- getbic(HMM_1)
 print (BIC)
 

@@ -1,13 +1,15 @@
 library('pryr')
 library('MASS')
+set.seed(1234)
+
 setGeneric("estimate",
-           function(object, initial_scheme_flag = FALSE, kmeans_initial = TRUE, initial_scheme1 = 0, initial_scheme2 = 0, random_seed = 0, data,  model_name = 'model_binary', block_size_search = FALSE, max_block_size = 10, order_file = NULL, num_permu = 0, complex_file = NULL, relaxed_search = FALSE, diagonal_flag = TRUE, output_full_model = TRUE){
+           function(object, initial_scheme_flag = FALSE, kmeans_initial = TRUE, initial_scheme1 = 0, initial_scheme2 = 0, random_seed = 0, data,  model_name = 'model_binary', block_size_search = FALSE, max_block_size = 10, order_file = NULL, num_permu = 0, complex_file = NULL, relaxed_search = FALSE, diagonal_flag = FALSE, output_full_model = TRUE){
              standardGeneric("estimate")
            }
 )
 
 setMethod("estimate", "HMMVB",
-          function(object, initial_scheme_flag = FALSE, kmeans_initial = TRUE, initial_scheme1 = 0, initial_scheme2 = 0, random_seed = 0, data, model_name = 'model_binary', block_size_search = FALSE, max_block_size = 10, order_file = NULL, num_permu = 0, complex_file = NULL, relaxed_search = FALSE, diagonal_flag = TRUE, output_full_model = TRUE){
+          function(object, initial_scheme_flag = FALSE, kmeans_initial = TRUE, initial_scheme1 = 0, initial_scheme2 = 0, random_seed = 0, data, model_name = 'model_binary', block_size_search = FALSE, max_block_size = 10, order_file = NULL, num_permu = 0, complex_file = NULL, relaxed_search = FALSE, diagonal_flag = FALSE, output_full_model = TRUE){
             model_binary_file = paste(model_name, 'dat', sep = '.')
             train_file = WriteData(object, data, 'Train_data.txt')
             train_cmd = paste(object@c_path, '/trainmaster', sep='')
